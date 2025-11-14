@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'features/winglets/screens/product_list_screen.dart';
+import 'app/app_router.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,11 +10,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'prac6',
+    return MaterialApp.router(
+      title: 'prac7',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: const ProductListScreen(),
+      routerConfig: appRouter,
     );
   }
 }

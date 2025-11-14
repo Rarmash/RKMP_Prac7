@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:prac7/features/winglets/screens/stock_manage_screen.dart';
 import '../services/data_service.dart';
 import '../widgets/product_tile.dart';
-import 'order_screen.dart';
-import 'stock_manage_screen.dart';
 import 'history_screen.dart';
+import 'order_screen.dart';
 
 class ProductListScreen extends StatefulWidget {
   const ProductListScreen({super.key});
@@ -42,8 +43,8 @@ class _ProductListScreenState extends State<ProductListScreen> {
                     MaterialPageRoute(
                       builder: (_) => OrderScreen(dataService: _data),
                     ),
-                  ).then((_) => _refresh());
-                },
+                  );
+                }
               ),
               ElevatedButton.icon(
                 icon: const Icon(Icons.inventory),
@@ -54,8 +55,8 @@ class _ProductListScreenState extends State<ProductListScreen> {
                     MaterialPageRoute(
                       builder: (_) => StockManageScreen(dataService: _data),
                     ),
-                  ).then((_) => _refresh());
-                },
+                  );
+                }
               ),
               ElevatedButton.icon(
                 icon: const Icon(Icons.history),

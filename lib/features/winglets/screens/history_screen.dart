@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../services/data_service.dart';
+import 'package:go_router/go_router.dart';
 import '../../../utils/format_utils.dart';
 
 class HistoryScreen extends StatelessWidget {
@@ -11,7 +12,13 @@ class HistoryScreen extends StatelessWidget {
     final history = dataService.history;
 
     return Scaffold(
-      appBar: AppBar(title: const Text('История заказов')),
+      appBar: AppBar(
+        title: const Text('История заказов'),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () => Navigator.pop(context),
+        ),
+      ),
       body: history.isEmpty
           ? const Center(child: Text('История заказов пуста'))
           : ListView.builder(

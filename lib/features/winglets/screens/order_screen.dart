@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import '../services/data_service.dart';
 import 'cart_screen.dart';
 
@@ -51,7 +52,13 @@ class _OrderScreenState extends State<OrderScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Оформление заказа')),
+      appBar: AppBar(
+        title: const Text('Оформление заказа'),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () => Navigator.pop(context),
+        ),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(

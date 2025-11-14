@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import '../services/data_service.dart';
 
 class StockManageScreen extends StatefulWidget {
@@ -44,7 +45,13 @@ class _StockManageScreenState extends State<StockManageScreen> {
     final products = widget.dataService.products;
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Управление складом')),
+      appBar: AppBar(
+        title: const Text('Управление складом'),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () => Navigator.pop(context),
+        ),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
