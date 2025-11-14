@@ -49,7 +49,7 @@ class _StockManageScreenState extends State<StockManageScreen> {
         title: const Text('Управление складом'),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
-          onPressed: () => Navigator.pop(context),
+          onPressed: () => context.pop(),
         ),
       ),
       body: Padding(

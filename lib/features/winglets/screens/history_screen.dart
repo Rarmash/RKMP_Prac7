@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../services/data_service.dart';
 import 'package:go_router/go_router.dart';
+import '../services/data_service.dart';
 import '../../../utils/format_utils.dart';
 
 class HistoryScreen extends StatelessWidget {
@@ -16,7 +16,7 @@ class HistoryScreen extends StatelessWidget {
         title: const Text('История заказов'),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
-          onPressed: () => Navigator.pop(context),
+          onPressed: () => context.pop(),
         ),
       ),
       body: history.isEmpty

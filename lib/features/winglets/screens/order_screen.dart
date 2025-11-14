@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../services/data_service.dart';
-import 'cart_screen.dart';
 
 class OrderScreen extends StatefulWidget {
   final DataService dataService;
@@ -41,12 +40,7 @@ class _OrderScreenState extends State<OrderScreen> {
       'date': DateTime.now(),
     };
 
-    Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(
-        builder: (_) => CartScreen(order: order, dataService: widget.dataService),
-      ),
-    );
+    context.push('/cart', extra: order);
   }
 
   @override
@@ -56,7 +50,7 @@ class _OrderScreenState extends State<OrderScreen> {
         title: const Text('Оформление заказа'),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
-          onPressed: () => Navigator.pop(context),
+          onPressed: () => context.pop(),
         ),
       ),
       body: Padding(

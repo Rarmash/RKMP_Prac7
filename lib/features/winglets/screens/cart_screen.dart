@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:prac7/features/winglets/screens/product_list_screen.dart';
 import '../services/data_service.dart';
 import '../../../utils/format_utils.dart';
 
@@ -29,7 +28,7 @@ class _CartScreenState extends State<CartScreen> {
         title: const Text('Результат заказа'),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
-          onPressed: () => Navigator.pop(context),
+          onPressed: () => context.pop(),
         ),
       ),
       body: Center(
@@ -55,14 +54,7 @@ class _CartScreenState extends State<CartScreen> {
                   textAlign: TextAlign.center),
               const SizedBox(height: 30),
               ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                        builder: (_) => const ProductListScreen(),
-                      ),
-                    );
-                  },
+                onPressed: () => context.pushReplacement('/products'),
                 child: const Text('Вернуться в каталог'),
               ),
             ],

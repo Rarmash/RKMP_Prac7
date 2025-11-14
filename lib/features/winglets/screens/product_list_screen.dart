@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:prac7/features/winglets/screens/stock_manage_screen.dart';
 import '../services/data_service.dart';
 import '../widgets/product_tile.dart';
-import 'history_screen.dart';
-import 'order_screen.dart';
 
 class ProductListScreen extends StatefulWidget {
   const ProductListScreen({super.key});
@@ -37,38 +34,17 @@ class _ProductListScreenState extends State<ProductListScreen> {
               ElevatedButton.icon(
                 icon: const Icon(Icons.shopping_cart),
                 label: const Text('Заказ'),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => OrderScreen(dataService: _data),
-                    ),
-                  );
-                }
+                onPressed: () => context.push('/order'),
               ),
               ElevatedButton.icon(
                 icon: const Icon(Icons.inventory),
                 label: const Text('Склад'),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => StockManageScreen(dataService: _data),
-                    ),
-                  );
-                }
+                onPressed: () => context.push('/stock'),
               ),
               ElevatedButton.icon(
                 icon: const Icon(Icons.history),
                 label: const Text('История'),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => HistoryScreen(dataService: _data),
-                    ),
-                  );
-                },
+                onPressed: () => context.push('/history'),
               ),
             ],
           ),
